@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const db = new sqlite3.Database(':memory:');
 db.serialize(function () {
 	db.run("CREATE TABLE user (username TEXT, password TEXT, title TEXT)");
-	db.run("INSERT INTO user VALUES ('privilegedUser', 'privilegedUser1', 'Administrator')");
+	db.run("INSERT INTO user VALUES ('ss', 'ss', 'ss')");
 });
 
 
@@ -27,6 +27,9 @@ app.post('/login', function (req, res) {
 	const password = req.body.password;
 	const query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";
 
+	// "unknown' OR '1'='1"
+
+
 	console.log("username: " + username);
 	console.log("password: " + password);
 	console.log('query: ' + query);
@@ -36,10 +39,18 @@ app.post('/login', function (req, res) {
 		if (err) {
 			console.log('ERROR', err);
 			res.redirect("/index.html#error");
+			res.send('There\'s been an error')
 		} else if (!row) {
 			res.redirect("/index.html#unauthorized");
 		} else {
-			res.send('Hello <b>' + row.title + '!</b><br /> This file contains all your secret data: <br /><br /> SECRETS <br /><br /> MORE SECRETS <br /><br /> <a href="/index.html">Go back to login</a>');
+			res.send('Login successful');
+
+			//Note: you need to replace the long malicious attack string below with 'Login successful' above. This direction isn't in the activity.
+
+		// 	Replace this:  "Hello <b>" +
+        //   row.title +
+        //   '!</b><br /> This file contains all your secret data: <br /><br /> SECRETS <br /><br /> MORE SECRETS <br /><br /> <a href="/index.html">Go back to login</a>'
+		
 		}
 	});
 
