@@ -70,16 +70,15 @@ app.post('/login', function (req, res) {
 
 
 			// NOTES:
-			// 1. To fully experience how SQL Injection works with this Graded Activity, you need to replace the long malicious attack string below with 'Login successful'
-			// as shown above so that you can see the user log in even with the incorrect input (since as the hacker you'll have entered unknown' OR '1'='1 to freak out the SQL mechanism).
+			// 1. To fully experience how SQL Injection works with this awesome Graded Activity, you need to replace the long malicious attack code (shown below) with 'Login successful'(as shown on line 69 above).
+			// so that you can see the user log in even with the incorrect input (since as the hacker you'll have entered unknown' OR '1'='1 to freak out the SQL mechanism).
 
 
-			// This is the code from the activity you're replacing starting on line 57:
+			// This is the code from the activity you're replacing (on line 69):
 			// "Hello <b>" +; row.title + '!</b><br /> This file contains all your secret data: <br /><br /> SECRETS <br /><br /> MORE SECRETS <br /><br /> <a href="/index.html">Go back to login</a>'
 
 
-			// 2. If you run into any weird errors that pop up even if you've had the app run correctly before, try deleting the package-lock.json file and the node_modules folder
-			// then run npm install again
+			// 2. If you run into any weird errors that pop up even if you've had the app run correctly before, try deleting the package-lock.json file and the node_modules folder then run npm install again
 
 
 		}
