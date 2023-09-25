@@ -1,6 +1,6 @@
-I trust you're wearing your white hat today, correct, Cybersecurity student?
+You're wearing your white hat today, right, Cybersecurity student?
 
-Then let's perform an SQL Injection attack just to see how it can be done!
+Let's perform an SQL Injection attack just to see how it can be done!
 
 
 1. Get this repo up and running according to the activity instructions in Canvas.
@@ -8,18 +8,17 @@ Then let's perform an SQL Injection attack just to see how it can be done!
 (Note the long comments in the app.js file and make sure you've read, understood, and followed them.)
 
 
-2. Enter this exact info: unknown' OR '1'='1
+2. Enter this exact info: unknown' OR '1'='1 (either in the password or username fields)
 
 
-3. Then the user should be logged in even though the correct username was not submitted!
+3. Then the user should be logged in even though the correct username was not submitted! (If you follow the instructions in the app.js file, you'll see the message "Login successful" on the page)
 
+4. You can check out this video, currently on YouTube, which does a quite thorough job of explaining SQL Injection and has a related Kontra-like exercise: https://youtu.be/2OPVViV-GQk
 
-4. You can try to inject other kinds of SQL statements that can manipulate the DB in malicious ways by entering it as the username. 
+5. You can try to inject other kinds of SQL statements that can manipulate the DB in malicious ways by entering it as the username. 
 You could give it a try by adding more run expressions for the sqlite database definition (after the expressions for creating the user db and then seeding it, around line 20).
 You may also need to do a little research on sqlite3 in-memory databases. Sqlite3 is a lightweight SQL dialect that comes out of the box with the Ruby on Rails and Django frameworks.
 
-
-5. You can check out this video, currently on YouTube, which does a quite thorough job of explaining SQL Injection and has a related Kontra-like exercise: https://youtu.be/2OPVViV-GQk
 
 
 Happy (white hat) hacking!
