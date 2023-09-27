@@ -8,17 +8,21 @@ Let's perform an SQL Injection attack just to see how it can be done!
 (Note the long comments in the app.js file and make sure you've read, understood, and followed them.)
 
 
-2. Enter this exact info: unknown' OR '1'='1 (either in the password or username fields)
+2. Enter this exact info in the password field as if you were a valid user: unknown' OR '1'='1 
 
+3. Then the user you inserted in the db should be logged in even though the correct username was not submitted!
 
-3. Then the user should be logged in even though the correct username was not submitted! (If you follow the instructions in the app.js file, you'll see the message "Login successful" on the page)
+    (If you follow the instructions in the app.js file, you'll see the message "Login successful" on the page)
+
 
 4. You can check out this video, currently on YouTube, which does a quite thorough job of explaining SQL Injection and has a related Kontra-like exercise: https://youtu.be/2OPVViV-GQk
 
-5. You can try to inject other kinds of SQL statements that can manipulate the DB in malicious ways by entering it as the username. 
-You could give it a try by adding more run expressions for the sqlite database definition (after the expressions for creating the user db and then seeding it, around line 20).
-You may also need to do a little research on sqlite3 in-memory databases. Sqlite3 is a lightweight SQL dialect that comes out of the box with the Ruby on Rails and Django frameworks.
 
+5. You can try to inject other kinds of SQL statements that can manipulate the DB in malicious ways by entering it as the username. 
+   You could do this by adding more run expressions for the sqlite database definition (after the expressions for creating the user db and then seeding it).
+
+   If you do so, you may need to do a little research on sqlite3 in-memory databases. Some kinds of SQL statements, such as dropping a table, might not work the way they would
+   with db that actually persists records. (Note: sqlite3 is a lightweight SQL dialect that comes out of the box with the Ruby on Rails and Django frameworks.)
 
 
 Happy (white hat) hacking!
